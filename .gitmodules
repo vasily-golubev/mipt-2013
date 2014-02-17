@@ -4,3 +4,39 @@
 [submodule "students/saykind"]
 	path = students/saykind
 	url = git://github.com/saykind/saykind.git
+[submodule "students/krasnobaev"]
+	path = students/krasnobaev
+	url = git://github.com/vladimir-krasniy/krasnobaev.git
+[submodule "students/znobishchev"]
+	path = students/znobishchev
+	url = git://github.com/AndreyZn/znobishchev.git
+[submodule "students/shakhov"]
+	path = students/shakhov
+	url = git://github.com/SShakhov/shakhov.git
+[submodule "students/abubakirov"]
+	path = students/abubakirov
+	url = git://github.com/DenisAb/abubakirov.git
+[submodule "students/volosheniuks"]
+	path = students/volosheniuks
+	url = git://github.com/Volosheniuk/volosheniuks.git
+[submodule "students/malakhov"]
+	path = students/malakhov
+	url = git://github.com/asm2500/malakhov.git
+[submodule "students/peshcherenko"]
+	path = students/peshcherenko
+	url = git://github.com/nikolai322/peshcherenko.git
+[submodule "students/divakov"]
+	path = students/divakov
+	url = git://github.com/divserge/divakov.git
+[submodule "students/kostyuk"]
+	path = students/kostyuk
+	url = git://github.com/kostyukai/kostyuk.git
+[submodule "students/antonov"]
+	path = students/antonov
+	url = git://github.com/AlexMIPT/antonov.git
+[submodule "students/krupnik"]
+	path = students/krupnik
+	url = git://github.com/Krupnikas/krupnik.git
+[submodule "students/kogut"]
+	path = students/kogut
+	url = git://github.com/eugeny-kogut/kogut.git
