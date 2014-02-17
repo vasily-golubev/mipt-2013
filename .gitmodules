@@ -1,3 +1,6 @@
 [submodule "students/gerasimov"]
 	path = students/gerasimov
 	url = git://github.com/AntonGerasimov/gerasimov.git
+[submodule "students/saykind"]
+	path = students/saykind
+	url = git://github.com/saykind/saykind.git
