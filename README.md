@@ -10,3 +10,4 @@ In this repo there is fixed structure:
 \hw-2\	- folder for 2nd Homework
 
 \cw\	- folder for Classwork
+	All files in this dir is like "task_N.s".
