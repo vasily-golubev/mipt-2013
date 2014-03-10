@@ -1,0 +1,120 @@
+### Prototype: <operation><suffix>	<source>, <destination>
+
+# suffix:
+b = 1 byte, w = 2 bytes, l = 4 bytes, q = 8 bytes.
+
+# address (of operand) calculation: offset(base, index, multiply):
+	(%ecx) - bring from the place found at %ecx ->
+	4(%ecx) - bring from the place found at %ecx -> + 4
+
+# addressing data in complex cases:
+	.data
+num:
+	.long 0x1
+	.text
+	movl	(num), %eax	# num = label = pointer to the place of VALUE
+	movl	$0x123, %ebx	# $0x123 = constant = VALUE
+	movl	$num, %ecx	# $num = address and used as VALUE for assignment,
+				# we can than use it like movl (%ecx), %eax to load VALUE
+
+# in .data section we can set different data:
+	.byte  VALUE - 1 byte
+	.short VALUE - 2 bytes
+	.long  VALUE - 4 bytes
+	.quad  VALUE - 8 bytes
+	.ascii "string"  - string without zero-end-byte
+	.string "string" - string wit zero-end-byte
+
+# calculate length of the string:
+hello_str:
+	.string "Hello\n"
+	# FYI: . - current address
+	.set hello_str_len, . - hello_str - 1
+
+# [mov]:
+	movb	$42, %al	# al = 42
+	movw	$1, %ax
+	movl	$2, %eax
+	movl	num(,%ecx,4), eax	# bring VALUE from address num + 4 * %ecx(VAL)
+
+# [lea]:
+	leal num, %eax		# movl $num, %eax
+	leal 0x32, %eax		# movl $0x32, %eax
+	leal 4(%esp), %eax	# movl %esp, %eax; addl $4, %eax
+	# FIXME Improve description for arithmetic.
+
+# [push]:
+	pushl %eax	# write on the top of the stack eax (VALUE) and esp--
+
+# [pop]:
+	popl %ecx	# write in ecx the VALUE from the top of the stack and esp++
+
+# [inc]:
+	incw %cx	# cx++
+
+# [dec]:
+	decl %eax	# eax--
+
+# [add]:
+	addl %eax, %ecx	# ecx = ecx + eax
+
+# [sub]:
+	subb %bl, %ah	# ah = ah - bl
+
+# [mul]:
+	mulb	$5	# FA in al, RES in ax
+	mulw	$5	# FA in ax, RES in ax (low), dx (high)
+	mull	$5	# FA in eax, RES in eax (low), edx (high)
+
+# [loop]:
+	movl $10, %ecx
+label_1:
+	incl %eax
+	loop label_1	# ecx-- and jmp label_1 while ecx > 0, else skip this cmd
+
+# [cmp]:
+	cmpl $4, %ecx	# val = ecx - 4 and set EFLAGS, val isn't saved
+
+# [jcc]:
+label_2:
+	# FIXME Add all possible cases.
+	jne label_2	# not equal, EFLAGS used
+	jmp label_2	# jump in any case
+	# TODO Organize loop without "loop" instruction
+
+# [and]:
+	andl $0, %ecx	# bitwise and, ecx = 0
+
+# [or]:
+	orl $0xFFFFFFFF, %ecx	# bitwise or, ecx = 0xFFFFFFFF
+
+# [xor]:
+	xorb %al, %ah	# bitvise exclusive or
+
+# [not]:
+	notw %ax	# like ~ax in C
+
+# [test]:
+	testl %eax, %ebx # like and, but ebx is not changed
+
+# [sal/sar]:
+	sall $1, %eax	# arithmetical left shear of eax for 1 position
+			# leftest bit is placed in CF and rightest bit is set to 0
+	sall %eax	# arithmetic left shear of eax for %cl (0-31) positions
+	sarl $2, %eax	# arithmetical right shear of eax for 2 positions
+			# leftest bit set the same as was and rightest bit is placed in CF
+# [shl, shr]
+	shll $1, %eax	# logical left shear of eax for 1 position
+			# leftest bit is placed in CF and rightest bit is set to 0
+	shrl $2, %eax	# logical right shear of eax for 2 positions
+			# leftest bit set the same as was and rightest bit is placed in CF
+
+# [rol, ror]
+	roll $1, %eax	# leftmost bit is placed in CF and also in rightmost bit
+			# the same for ror
+
+# [rcl, rcf]
+	rcll $1, %ebx	# in this case we think as CF is the leftmost bit and simply do rol
+
+# [call]
+	call function
