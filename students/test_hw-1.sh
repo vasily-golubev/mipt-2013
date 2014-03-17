@@ -57,9 +57,9 @@ for dir in */ ; do
 				echo -e "\t\t\t${red}RESULT WRONG${NC}"
 			fi
 			# Clean.
-			rm $bin 2>/dev/null
 			rm task.out 2>/dev/null
 		done
+		rm $bin 2>/dev/null
 	done
 	# Return to origin folder.
 	cd ../..
