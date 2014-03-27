@@ -40,3 +40,6 @@
 [submodule "students/kogut"]
 	path = students/kogut
 	url = git://github.com/eugeny-kogut/kogut.git
+[submodule "students/ech"]
+	path = students/ech
+	url = git://github.com/stasyoch/ech.git
