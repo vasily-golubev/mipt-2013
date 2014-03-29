@@ -21,7 +21,7 @@
 	url = git://github.com/Volosheniuk/volosheniuks.git
 [submodule "students/malakhov"]
 	path = students/malakhov
-	url = git://github.com/asm2500/malakhov.git
+	url = https://github.com/asm2500/malakhov/
 [submodule "students/peshcherenko"]
 	path = students/peshcherenko
 	url = git://github.com/nikolai322/peshcherenko.git
