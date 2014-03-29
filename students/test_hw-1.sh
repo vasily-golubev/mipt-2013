@@ -16,7 +16,11 @@ bin="./task"
 hw="hw-1"
 
 # Loop over student's HW folders.
-for dir in */ ; do
+dirs=*/
+if [ $# == 1 ]; then
+	dirs=$1
+fi
+for dir in $dirs ; do
 	# Print title.
 	echo -e "${blue}STUDENT: $dir$NC"
 	# Safely cd in next student's folder.
