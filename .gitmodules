@@ -33,7 +33,7 @@
 	url = git://github.com/kostyukai/kostyuk.git
 [submodule "students/antonov"]
 	path = students/antonov
-	url = git://github.com/AlexMIPT/antonov.git
+	url = https://github.com/AlexMIPT/antonov/
 [submodule "students/krupnik"]
 	path = students/krupnik
 	url = git://github.com/Krupnikas/krupnik.git
