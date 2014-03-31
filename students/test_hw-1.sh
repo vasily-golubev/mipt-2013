@@ -18,7 +18,7 @@ hw="hw-1"
 # Loop over student's HW folders.
 dirs=*/
 if [ $# == 1 ]; then
-	dirs=$1
+	dirs=$1"/"
 fi
 for dir in $dirs ; do
 	# Print title.
