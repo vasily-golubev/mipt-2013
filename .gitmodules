@@ -9,7 +9,7 @@
 	url = git://github.com/vladimir-krasniy/krasnobaev.git
 [submodule "students/znobishchev"]
 	path = students/znobishchev
-	url = git://github.com/AndreyZn/znobishchev.git
+	url = https://github.com/AndreyZn/znobishchev.git
 [submodule "students/shakhov"]
 	path = students/shakhov
 	url = git://github.com/SShakhov/shakhov.git
