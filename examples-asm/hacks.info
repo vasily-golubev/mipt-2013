@@ -1,0 +1,27 @@
+[GDB]
+info registers
+	- show values of all registers
+disass
+	- disassemble part of code
+break function
+	- set breakpoint at the entrance of function
+si
+	- step only 1 instruction forward
+n
+	- step without entering the functions
+x/10c 0x8049660
+	- show 10 bytes from ADDRESS as ASCII symbols
+break *0x08048a3d
+	- set breakpoint at ADDRESS
+info breakpoints
+	- show info about your breakpoints
+disable N
+	- disable N's breakpoint
+
+[Terminal]
+echo "ibase=16; 18894" | bc
+	- convert from HEX to DECIMAL
+echo "obase=16; 10" | bc
+	- convert from DECIMAL to HEX
+printf "0x%X\n" $(( 0xc+0xbffff2b8  ))
+	- summ two HEX values
