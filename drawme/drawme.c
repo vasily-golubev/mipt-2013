@@ -12,6 +12,8 @@ int DM_plot_1d(double *array_x, double *array_y, unsigned int len, char *title, 
 		gnuplot_cmd(h, "set output \"result.png\"");
 	}
 	gnuplot_setstyle(h, "lines");
+	gnuplot_cmd(h, "set xrange [-1:1]");
+	gnuplot_cmd(h, "set yrange [0:2]");
 	gnuplot_set_xlabel(h, "Coordinate, x");
 	gnuplot_set_ylabel(h, "Value, u");
 	gnuplot_plot_xy(h, array_x, array_y, len, title);
