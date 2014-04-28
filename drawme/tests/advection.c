@@ -1,5 +1,6 @@
 // We deal with x = [-1, 1].
 #include <stdio.h>
+#include "../drawme.h"
 
 #ifdef _OPENMP
 #include <omp.h>

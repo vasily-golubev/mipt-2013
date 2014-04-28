@@ -6,11 +6,11 @@ make
 cd ..
 
 # Build standalone version.
-gcc standalone.c drawme.c gnuplot_i/gnuplot_i.o -o standalone
+gcc standalone.c drawme.c gnuplot_i/gnuplot_i.o -o standalone -Wall
 
 
 # TODO Add -fopenmp as 1st parameter if want.
 # Build test (advection).
 cd tests
-gcc advection.c ../drawme.c ../gnuplot_i/gnuplot_i.o $1 -o advection
+gcc advection.c ../drawme.c ../gnuplot_i/gnuplot_i.o $1 -o advection -Wall
 cd ..
